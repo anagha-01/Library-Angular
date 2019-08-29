@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms'
 
 @Component({
   selector: 'app-addbook',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddbookComponent implements OnInit {
 
+  onSubmit(data:NgForm){
+    console.log(data.value)
+  }
   constructor() { }
 
   ngOnInit() {
