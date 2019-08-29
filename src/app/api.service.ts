@@ -6,5 +6,9 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  insertData(data){
+    return this.http.post("http://localhost:3000/readApi",data)
+  }
 }

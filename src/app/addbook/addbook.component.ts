@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
+import {ApiService} from '../api.service'
 
 @Component({
   selector: 'app-addbook',
@@ -10,8 +11,12 @@ export class AddbookComponent implements OnInit {
 
   onSubmit(data:NgForm){
     console.log(data.value)
+    this.apiservice.insertData(data.value).subscribe((response)=>{
+      console.log(response)
+      alert('Successfully Inserted')
+    })
   }
-  constructor() { }
+  constructor(private apiservice:ApiService) { }
 
   ngOnInit() {
   }
